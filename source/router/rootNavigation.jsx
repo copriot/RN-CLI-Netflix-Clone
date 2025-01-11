@@ -5,6 +5,7 @@ import SignIn from '../screens/signIn';
 import WatchList from '../screens/watchList';
 import Header from '../components/router/header';
 import ThemeColors from '../theme/themeColors';
+import {Edit2} from 'iconsax-react-native';
 
 const Stack = createNativeStackNavigator();
 const RootNavigation = () => {
@@ -20,7 +21,14 @@ const RootNavigation = () => {
         component={GetStarted}
       />
       <Stack.Screen name={SIGNIN} component={SignIn} />
-      <Stack.Screen name={WATCHLIST} component={WatchList} />
+      <Stack.Screen
+        name={WATCHLIST}
+        component={WatchList}
+        options={{
+          headerStyle: {backgroundColor: ThemeColors.BLACK},
+          headerRight: () => <Edit2 size="24" color={ThemeColors.WHITE} />,
+        }}
+      />
     </Stack.Navigator>
   );
 };
