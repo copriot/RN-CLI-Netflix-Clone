@@ -1,14 +1,15 @@
-import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-
+import {NavigationContainer} from '@react-navigation/native';
+import RootNavigation from './source/router/rootNavigation';
+import {Provider} from 'react-redux';
 const App = () => {
   return (
-    <SafeAreaView>
-      <Text>App</Text>
-    </SafeAreaView>
+    <>
+      <NavigationContainer>
+        <RootNavigation />
+      </NavigationContainer>
+    </>
   );
 };
 
 export default App;
-
-const styles = StyleSheet.create({});
