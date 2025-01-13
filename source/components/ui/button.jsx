@@ -4,7 +4,7 @@ import ThemeColors from '../../theme/themeColors';
 
 const Button = props => {
   const {title, status} = props;
-  const setColor = () => {
+  const setColor = status => {
     switch (status) {
       case 'primary':
         ThemeColors.RED;

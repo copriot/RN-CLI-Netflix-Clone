@@ -1,11 +1,13 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import GetStarted from '../screens/getStarted';
-import {GETSTARTED, SIGNIN, WATCHLIST} from '../utils/routes';
+import {ADDNEWLIST, GETSTARTED, SIGNIN, WATCHLIST} from '../utils/routes';
 import SignIn from '../screens/signIn';
 import WatchList from '../screens/watchList';
 import Header from '../components/router/header';
 import ThemeColors from '../theme/themeColors';
 import {Edit2} from 'iconsax-react-native';
+import {Image} from 'react-native';
+import AddNewList from '../screens/watchList/addNewList';
 
 const Stack = createNativeStackNavigator();
 const RootNavigation = () => {
@@ -24,9 +26,37 @@ const RootNavigation = () => {
       <Stack.Screen
         name={WATCHLIST}
         component={WatchList}
-        options={{
+        options={({route, navigation}) => ({
           headerStyle: {backgroundColor: ThemeColors.BLACK},
-          headerRight: () => <Edit2 size="24" color={ThemeColors.WHITE} />,
+          headerRight: () => (
+            <Edit2
+              size="24"
+              color={ThemeColors.WHITE}
+              onPress={() => navigation.navigate(ADDNEWLIST)}
+            />
+          ),
+          headerTitle: () => (
+            <Image
+              source={require('../assets/images/Netflix.png')}
+              style={{width: 100, height: 40}}
+              boyutları
+              resizeMode="contain"
+            />
+          ),
+        })}
+      />
+
+      <Stack.Screen
+        name={ADDNEWLIST}
+        component={AddNewList}
+        options={{
+          headerTitle: () => (
+            <Image
+              source={require('../assets/images/Netflix.png')}
+              style={{width: 100, height: 40}}
+              resizeMode="contain"
+            />
+          ),
         }}
       />
     </Stack.Navigator>
