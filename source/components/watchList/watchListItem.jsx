@@ -4,16 +4,19 @@ import ThemeColors from '../../theme/themeColors';
 import {generateRandomHexColor} from '../../utils/functions';
 import {height, width} from '../../utils/constants';
 import {useNavigation} from '@react-navigation/native';
+import {TAB} from '../../utils/routes';
 
 const WatchListItem = ({item}) => {
   const navigation = useNavigation();
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => navigation.replace(TAB)}>
       <View
         style={{
           backgroundColor: generateRandomHexColor(),
-          width: width / 2 - 30,
-          height: height / 8,
+          width: width / 2 - 35,
+          height: height / 7,
           justifyContent: 'center',
           alignItems: 'center',
           borderRadius: 5,
