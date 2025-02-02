@@ -1,6 +1,13 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import GetStarted from '../screens/getStarted';
-import {ADDNEWLIST, GETSTARTED, SIGNIN, TAB, WATCHLIST} from '../utils/routes';
+import {
+  ADDNEWLIST,
+  GETSTARTED,
+  MOVIEDETAIL,
+  SIGNIN,
+  TAB,
+  WATCHLIST,
+} from '../utils/routes';
 import SignIn from '../screens/signIn';
 import WatchList from '../screens/watchList';
 import Header from '../components/router/header';
@@ -9,6 +16,7 @@ import {Edit2} from 'iconsax-react-native';
 import {Image} from 'react-native';
 import AddNewList from '../screens/watchList/addNewList';
 import TabNavigation from './tabNavigation';
+import MovieDetail from '../screens/movies/movieDetail';
 
 const Stack = createNativeStackNavigator();
 const RootNavigation = () => {
@@ -63,6 +71,11 @@ const RootNavigation = () => {
       <Stack.Screen
         name={TAB}
         component={TabNavigation}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name={MOVIEDETAIL}
+        component={MovieDetail}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

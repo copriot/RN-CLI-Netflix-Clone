@@ -7,3 +7,4 @@ export const HOME = 'Home';
 export const NEWHOT = 'NewHot';
 export const SEARCH = 'Search';
 export const DOWNLOADS = 'Downloads';
+export const MOVIEDETAIL = 'Movie Detail';
